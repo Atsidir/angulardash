@@ -1,0 +1,22 @@
+<div>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table">
+<thead class="thead-light">
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Modelid</th>
+    <th>Health</th>
+    <th>Remaining days</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of _data" (click)="redirectto(item)">
+    <td>{{ item.name }}</td>
+    <td>{{ item.city }}</td>
+    <td>{{ item.equipment }}</td>
+    <td>{{ item.equipment_health_score }}</td>
+    <td>{{ item.predicted_maintanance }}</td>
+  </tr>
+</tbody>
+</table>
+</div>

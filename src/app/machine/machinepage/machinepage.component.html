@@ -1,0 +1,40 @@
+<div class="main-content">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="card card-tasks">
+        <div class="card-body ">
+          <div class="table-full-width table-responsive">
+                <app-machinetable [data]="data"></app-machinetable>
+          </div>
+        </div>
+      </div>
+      <div class="card card-tasks">
+        <div class="card-body ">
+          <div class="table-full-width table-responsive">
+                <app-machinepartstable [data]="parts"></app-machinepartstable>
+          </div>
+        </div>
+      </div>
+        <app-machinechart [style.display]="displayOil" [charttype]="oil_filter" [whatever]="oilhistory"></app-machinechart>
+        <app-machinechart [style.display]="displayAir" [charttype]="air_filter" [whatever]="airhistory"></app-machinechart>
+      </div>
+    <div class="col-md-6">
+      <div class="card card-tasks">
+        <div class="card-body ">
+          <div class="table-full-width table-responsive">
+                <app-machinecontrol (messageEvent)="receiveFilter($event)"></app-machinecontrol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
